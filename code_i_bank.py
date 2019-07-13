@@ -8,6 +8,7 @@ class InternetBank(object):
 
     def enter_pin_code(self,pin_code):
         correct_pin_code = 333
+
         if self.attempts == 0:
             return "incorrect pin code"
 
@@ -19,3 +20,18 @@ class InternetBank(object):
             self.user_can_get_money = True
             return True
 
+    def snyat_dengi(self, minus_money):
+        if self.user_can_get_money:
+            if minus_money <= self.balance:
+                self.balance = self.balance - minus_money
+                return minus_money
+            else:
+                return "Error"
+
+
+    def confirm_the_balance(self, show_balance):
+        if self.user_can_get_money:
+            if show_balance == "show balance":
+                return self.balance
+        else:
+            return "No access"
