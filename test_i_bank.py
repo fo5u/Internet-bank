@@ -111,13 +111,13 @@ class TestInternetBank(unittest.TestCase):
         self.terminal.snyat_dengi(5001)
         self.assertEqual(self.terminal.balance, 5001)
 
+    def test_check_balance(self):
+        t = self.terminal.enter_pin_code(333)
+        self.terminal.check_balance()
+        self.assertEqual(self.terminal.balance,5000)
 
-    def test_valid_confirm_balance(self):
-        t = self.terminal.confirm_the_balance(1)
-        self.assertEqual(t, 5000)
-
-    def test_incorrect_confirm_balance(self):
-        t = self.terminal.confirm_the_balance(2)
+    def test_incorrect_check_balance(self):
+        t = self.terminal.check_balance(2)
         self.assertEqual(t, "No access")
 
     #def test_balance_string(self):

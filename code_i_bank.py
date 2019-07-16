@@ -1,5 +1,5 @@
-
-import internet_bank_except
+from internet_bank_except import *
+import internet
 
 class InternetBank(object):
     balance = 5000
@@ -42,11 +42,13 @@ class InternetBank(object):
             else:
                 return "Error"
 
-    def confirm_the_balance(self, my_balance):
+    def check_balance(self):
          if self.user_can_get_money:
-            if my_balance == 1:
-                return self.balance
-            if my_balance!=1:
-                return "No access"
+            return self.balance
+         else:
+             raise EnterPin
+
+
+
 
 
