@@ -1,5 +1,5 @@
 
-import internet_bank_except
+from internet_bank_except import *
 
 class InternetBank(object):
     balance = 5000
@@ -8,22 +8,26 @@ class InternetBank(object):
 
     def top_up_money(self,my_money):
         if my_money == -1:
-            raise ValueError
+            raise MinusOdin
+
+        if my_money == 0:
+            raise Zero
+
         else:
             return self.balance + my_money
 
     def enter_pin_code(self,pin_code):
         correct_pin_code = 333
 
-        # if pin_code == str
-        #     raise ValueError
+        if pin_code == str:
+            raise String
 
         if self.attempts == 0:
-            return "incorrect pin code"
+            raise AttemtsOver
 
         if pin_code != correct_pin_code:
             self.attempts = self.attempts - 1
-            return "Error! Invalid pin code."
+            raise IncorrectPin
 
         if pin_code == correct_pin_code:
             self.user_can_get_money = True
@@ -34,7 +38,12 @@ class InternetBank(object):
         if self.user_can_get_money:
 
             if minus_money == -1:
-                raise ValueError
+                raise MinusOdin
+            if minus_money == 0:
+                raise Zero
+
+            if minus_money == str:
+                raise String
 
             if minus_money <= self.balance:
                 self.balance = self.balance - minus_money
@@ -47,6 +56,6 @@ class InternetBank(object):
             if my_balance == 1:
                 return self.balance
             if my_balance!=1:
-                return "No access"
+                raise EnterPin
 
 

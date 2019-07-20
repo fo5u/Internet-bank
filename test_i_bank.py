@@ -120,6 +120,6 @@ class TestInternetBank(unittest.TestCase):
         t = self.terminal.confirm_the_balance(2)
         self.assertEqual(t, "No access")
 
-    #def test_balance_string(self):
-     #   r = self.terminal.enter_pin_code("pin")
-      #  self.assertEqual(r, "ValueError")
+    def test_pin_code_string(self):
+        r = self.terminal.enter_pin_code("gffg")
+        self.assertEqual(r, "String")

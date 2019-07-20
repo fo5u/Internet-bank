@@ -11,3 +11,12 @@ class EnterPin(Exception):
 
 class IncorrectPin(Exception):
     pass
+
+class MinusOdin(Exception):
+    pass
+
+class Zero(Exception):
+    pass
+
+class String(Exception):
+    pass
