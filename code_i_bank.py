@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 
 from internet_bank_except import *
-=======
-from internet_bank_except import *
-import internet
->>>>>>> f9a7b6ce14a15686a0792dc779b7b2c76dcc3a9c
 
 class InternetBank(object):
     balance = 5000
@@ -17,7 +12,6 @@ class InternetBank(object):
 
         if my_money == 0:
             raise Zero
-
         else:
             return self.balance + my_money
 
@@ -58,18 +52,12 @@ class InternetBank(object):
 
     def check_balance(self):
          if self.user_can_get_money:
-<<<<<<< HEAD
-            if my_balance == 1:
-                return self.balance
-            if my_balance!=1:
-                raise EnterPin
-=======
             return self.balance
          else:
              raise EnterPin
 
 
 
->>>>>>> f9a7b6ce14a15686a0792dc779b7b2c76dcc3a9c
+
 
 
