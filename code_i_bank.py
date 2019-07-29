@@ -26,7 +26,7 @@ class InternetBank(object):
 
         if pin_code != correct_pin_code:
             self.attempts = self.attempts - 1
-            raise IncorrectPin
+            #raise IncorrectPin
 
         if pin_code == correct_pin_code:
             self.user_can_get_money = True
